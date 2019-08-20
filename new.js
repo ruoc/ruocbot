@@ -1,4 +1,5 @@
 require('dotenv').config();
+const request = require('request');
 const Telegraf = require('telegraf')
 const Extra = require('telegraf/extra')
 const session = require('telegraf/session')
@@ -20,7 +21,12 @@ bot.use((ctx, next) => {
     console.log('response time %sms', ms)
   })
 })
-
+function getRandomCat(){
+  request('https://api.thecatapi.com/v1/images/search', { json: true }, (err, res, body) => {
+    if (err) { return console.log(err); }
+    return body.url;
+  });
+}
 // Login widget events
 bot.on('connected_website', ({ reply }) => reply('Website connected'))
 
@@ -51,7 +57,7 @@ bot.command('answer', sayYoMiddleware, (ctx) => {
   return ctx.reply('*42*', Extra.markdown())
 })
 
-bot.command('cat', ({ replyWithPhoto }) => replyWithPhoto(randomPhoto))
+bot.command('cat', ({ replyWithPhoto }) => replyWithPhoto(getRandomCat()))
 
 // Streaming photo, in case Telegram doesn't accept direct URL
 bot.command('cat2', ({ replyWithPhoto }) => replyWithPhoto({ url: randomPhoto }))

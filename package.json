@@ -5,6 +5,7 @@
   "main": "bot.js",
   "dependencies": {
     "dotenv": "^8.1.0",
+    "request": "^2.88.0",
     "telegraf": "^3.32.0"
   },
   "devDependencies": {},
