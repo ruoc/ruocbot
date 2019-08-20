@@ -24,7 +24,7 @@ bot.use((ctx, next) => {
 function getRandomCat(){
   request('https://api.thecatapi.com/v1/images/search', { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
-    return body.url;
+    replyWithPhoto({url:body.url});
   });
 }
 // Login widget events
@@ -57,7 +57,7 @@ bot.command('answer', sayYoMiddleware, (ctx) => {
   return ctx.reply('*42*', Extra.markdown())
 })
 
-bot.command('cat', ({ replyWithPhoto }) => replyWithPhoto({url: getRandomCat()}))
+bot.command('cat', ({ replyWithPhoto }) => getRandomCat());
 
 // Streaming photo, in case Telegram doesn't accept direct URL
 bot.command('cat2', ({ replyWithPhoto }) => replyWithPhoto({ url: randomPhoto }))
