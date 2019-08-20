@@ -1,2 +1,2 @@
 # ruocbot
-Ruoc Bot
+Ruoc Bot, fun bot
