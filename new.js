@@ -24,7 +24,7 @@ bot.use((ctx, next) => {
 function getRandomCat(){
   request('https://api.thecatapi.com/v1/images/search', { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
-    replyWithPhoto({url:body[0].url});
+    replyWithPhoto({url:res[0].url});
   });
 }
 // Login widget events
