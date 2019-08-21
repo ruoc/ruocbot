@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ruoc/ruocbot/issues"
   },
-  "homepage": "https://github.com/ruoc/ruocbot#readme"
+  "homepage": "https://github.com/ruoc/ruocbot#readme",
+  "dependencies": {
+    "telegraf": "^3.32.0"
+  }
 }
