@@ -24,7 +24,10 @@ bot.use((ctx, next) => {
 function getRandomCat(){
   request('https://api.thecatapi.com/v1/images/search', { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
-    return res[0].url;
+      if(res[0]){
+        return res[0].url;
+      }
+      return 'https://picsum.photos/200/300/?random';
   });
 }
 // Login widget events
