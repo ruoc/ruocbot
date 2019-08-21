@@ -2,7 +2,7 @@
 const dotenv = require('dotenv')
 const Extra = require('telegraf/extra')
 const fs = require('fs')
-
+const Telegraf = require('telegraf')
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.use((ctx, next) => {
