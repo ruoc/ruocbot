@@ -57,7 +57,7 @@ bot.command('answer', sayYoMiddleware, (ctx) => {
   return ctx.reply('*42*', Extra.markdown())
 })
 
-bot.command('cat', ({ replyWithPhoto }) => replyWithPhoto(getRandomCat()));
+bot.command('cat', (ctx) => ctx.replyWithPhoto(getRandomCat()));
 
 // Streaming photo, in case Telegram doesn't accept direct URL
 bot.command('cat2', ({ replyWithPhoto }) => replyWithPhoto({ url: randomPhoto }))
