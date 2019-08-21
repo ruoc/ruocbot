@@ -14,7 +14,7 @@ bot.use((ctx, next) => {
 })
 
 
-bot.command('gai', (ctx) => ctx.reply('Ok gai');
+bot.command('gai', (ctx) => ctx.reply('Ok gai'));
 
 bot.on('text', (ctx) => ctx.reply('Hello World'))
 bot.launch()
