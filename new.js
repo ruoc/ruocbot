@@ -21,13 +21,13 @@ bot.use((ctx, next) => {
     console.log('response time %sms', ms)
   })
 })
-function getRandomCat(){
+function getRandomCat(ctx){
   request('https://api.thecatapi.com/v1/images/search', { json: true }, (err, res, body) => {
-    if (err) { return console.log(err); }
+    if (err) { ctx.reply(body) }
       if(res[0]){
-        return res[0].url;
+        ctx.replyWithPhoto(res[0].url);
       }
-      return 'https://picsum.photos/200/300/?random';
+      ctx.reply('no result');
   });
 }
 // Login widget events
@@ -60,7 +60,7 @@ bot.command('answer', sayYoMiddleware, (ctx) => {
   return ctx.reply('*42*', Extra.markdown())
 })
 
-bot.command('cat', (ctx) => ctx.replyWithPhoto(getRandomCat()));
+bot.command('cat', (ctx) => getRandomCat(ctx));
 
 // Streaming photo, in case Telegram doesn't accept direct URL
 bot.command('cat2', ({ replyWithPhoto }) => replyWithPhoto({ url: randomPhoto }))
