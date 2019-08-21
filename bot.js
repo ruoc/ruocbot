@@ -1,5 +1,5 @@
 
-const dotenv = require('dotenv')
+require('dotenv').config();
 const Extra = require('telegraf/extra')
 const fs = require('fs')
 const Telegraf = require('telegraf')
