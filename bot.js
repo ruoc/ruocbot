@@ -18,7 +18,7 @@ function getRandomPostMedia(){
 	var result = {type:"text"}
 	axios.get(redditUrl)
 	.then(function(res){
-		console.log(res.data[0].data)
+		console.log(res.data[0].data.children.url)
 	})
 }
 
