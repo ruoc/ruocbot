@@ -17,7 +17,7 @@ bot.use((ctx, next) => {
 function getRandomPostMedia(){
 	axios.get(redditUrl)
 	.then(function(res){
-		console.log(res)
+		console.log(res.data)
 	})
 }
 
