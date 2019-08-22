@@ -15,9 +15,10 @@ bot.use((ctx, next) => {
 })
 
 function getRandomPostMedia(){
+	var result = {type:"text"}
 	axios.get(redditUrl)
 	.then(function(res){
-		console.log(res.data)
+		console.log(res.data[0].data)
 	})
 }
 
