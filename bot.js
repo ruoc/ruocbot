@@ -3,7 +3,7 @@ require('dotenv').config();
 const Extra = require('telegraf/extra')
 const fs = require('fs')
 const Telegraf = require('telegraf')
-const axious = require('axious')
+const axios = require('axios')
 const bot = new Telegraf(process.env.BOT_TOKEN)
 const redditUrl = 'https://www.reddit.com/r/AsiansGoneWild/random.json';
 bot.use((ctx, next) => {
@@ -15,7 +15,7 @@ bot.use((ctx, next) => {
 })
 
 function getRandomPostMedia(){
-	axious.get(redditUrl)
+	axios.get(redditUrl)
 	.then(function(res){
 		console.log(JSON.parse(res))
 	})
