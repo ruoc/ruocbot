@@ -19,8 +19,8 @@ http
  
       const body = JSON.parse(chunk);
  
-      const isMaster = body?.ref === 'refs/heads/master';
-      const directory = GITHUB_REPOSITORIES_TO_DIR[body?.repository?.full_name];
+      const isMaster = body.ref === 'refs/heads/master';
+      const directory = GITHUB_REPOSITORIES_TO_DIR[body.repository.full_name];
  
       if (isAllowed && isMaster && directory) {
         try {
