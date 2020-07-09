@@ -25,6 +25,7 @@ http
       if (isAllowed && isMaster && directory) {
         try {
           exec(`cd ${directory} && pm2 restart bot`);
+          console.log('bot is restarted');
         } catch (error) {
           console.log(error);
         }
