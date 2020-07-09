@@ -22,6 +22,8 @@
   "dependencies": {
     "axios": "^0.19.0",
     "dotenv": "^8.1.0",
+    "hookshot": "^0.1.0",
+    "http": "0.0.1-security",
     "telegraf": "^3.32.0"
   }
 }
