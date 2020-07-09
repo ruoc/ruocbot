@@ -24,7 +24,7 @@ http
  
       if (isAllowed && isMaster && directory) {
         try {
-          exec(`cd ${directory} && pm2 restart bot`);
+          exec(`cd ${directory} && git pull`);
           console.log('bot is restarted');
         } catch (error) {
           console.log(error);
