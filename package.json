@@ -1,8 +1,8 @@
 {
   "name": "ls",
   "version": "1.0.0",
-  "description": "My Telegram bot",
-  "main": "index.js",
+  "description": "Hinh Su Thon",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,7 @@
     "dotenv": "^8.1.0",
     "hookshot": "^0.1.0",
     "http": "0.0.1-security",
-    "telegraf": "^3.32.0"
+    "telegraf": "^3.32.0",
+    "mongoose": "^5.0.16"
   }
 }

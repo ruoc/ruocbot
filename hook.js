@@ -24,7 +24,7 @@ http
  
       if (isAllowed && isMaster && directory) {
         try {
-          exec(`cd ${directory} && git pull`);
+          exec(`cd ${directory} && git pull && npm install`);
           console.log('bot is restarted');
         } catch (error) {
           console.log(error);
