@@ -14,7 +14,7 @@ const dealerSchema = new Schema({
 
 const Dealer = mongoose.model('Dealer', dealerSchema);
 
-bot.command('/add', ctx => {
+app.command('/add', ctx => {
     const message = ctx.message;
     const myDealer = new Dealer({
       name: message.text.split(';\n')[0].replace('/add ', ''),
