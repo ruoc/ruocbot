@@ -7,7 +7,7 @@ app.hears('hi', ctx => {
 });
 app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/, ctx => {
     var userName = ctx.message.text.match(/(?<=^|(?<=[^a-zA-Z0-9-_\.]))@([A-Za-z]+[A-Za-z0-9-_]+)/);
-    console.log(ctx.message);
+    console.log(userName);
     if(userName){
         return ctx.reply(userName.join(' '));
     }
