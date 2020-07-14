@@ -16,16 +16,7 @@ const Dealer = mongoose.model('Dealer', dealerSchema);
 
 app.command('/add', ctx => {
     const message = ctx.message;
-    const myDealer = new Dealer({
-      name: message.text.split(';\n')[0].replace('/add ', ''),
-      description: message.text.split(';\n')[1],
-      type: message.text.split(';\n')[2].toLowerCase(),
-      author: message.from.id,
-    });
-  
-    myNote.save((err, mess) => {
-      ctx.reply('Saved! ✅');
-    });
+    console.log(message);
 });
 
 function filterUsername(names){
