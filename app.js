@@ -8,7 +8,7 @@ function filterUsername(names){
     for (let i = 0; i < names.length; i++) {
         if(names[i].includes('@')) copyItems.push(names[i])
     }
-
+    return copyItems;
 }
 
 app.hears('hi', ctx => {
