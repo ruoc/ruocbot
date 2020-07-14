@@ -8,6 +8,9 @@ app.hears('hi', ctx => {
 app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/, ctx => {
     var userName = ctx.message.text.match(/^@?([a-zA-Z0-9_]){1,15}$/);
     console.log(ctx.message);
-    return ctx.reply(userName.join(' '));
+    if(userName){
+        return ctx.reply(userName.join(' '));
+    }
+    return ctx.reply('deo tim thay username nao');
 });
 app.startPolling();
