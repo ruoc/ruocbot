@@ -7,6 +7,6 @@ app.hears('hi', ctx => {
 });
 app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/gm, ctx => {
     //var userName = ctx.message.match(/^@?([a-zA-Z0-9_]){1,15}$/);
-    return ctx.match.join(' ');
+    return ctx.match;
 });
 app.startPolling();
