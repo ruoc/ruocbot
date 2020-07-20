@@ -28,13 +28,8 @@ function filterUsername(names){
     return copyItems;
 }
 
-app.hears('hi', ctx => {
-  return ctx.reply('Hey!');
-});
-
 app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/, ctx => {
     var userName = ctx.message.text.match(/@([\w]+)/);
-    console.log(filterUsername(userName));
     if(userName){
         return ctx.reply(userName.join(' '));
     }
