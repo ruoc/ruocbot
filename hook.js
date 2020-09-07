@@ -16,7 +16,7 @@ http
         .digest('hex')}`;
  
       const isAllowed = req.headers['x-hub-signature'] === signature;
- 
+ console.log(chunk);
       const body = JSON.parse(chunk);
  
       const isMaster = body.ref === 'refs/heads/master';
