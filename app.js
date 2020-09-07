@@ -31,7 +31,7 @@ function filterUsername(names){
 app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/, ctx => {
     var userName = ctx.message.text.match(/@([\w]+)/);
     if(userName){
-        return ctx.reply(filterUsername(userName).join(' '));
+        return ctx.reply('tìm thấy ' +userName.length+' username: '+filterUsername(userName).join(' '));
     }
     return ctx.reply('Check tín thì tag username vào');
 });
