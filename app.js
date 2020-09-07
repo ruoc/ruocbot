@@ -3,7 +3,7 @@ const Telegraf = require('telegraf');
 const mongoose = require('mongoose');
 const app = new Telegraf(process.env.BOT_TOKEN);
 
-mongoose.connect('mongodb://localhost/moonotes');
+mongoose.connect('mongodb://localhost/soden', {useNewUrlParser: true, useUnifiedTopology: true});
 const Schema = mongoose.Schema;
 
 const dealerSchema = new Schema({
@@ -33,6 +33,6 @@ app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/, ctx => {
     if(userName){
         return ctx.reply(userName.join(' '));
     }
-    return ctx.reply('deo tim thay username nao');
+    return ctx.reply('Check tín thì tag username vào');
 });
 app.startPolling();
