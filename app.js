@@ -29,7 +29,7 @@ function filterUsername(names){
 }
 
 app.hears(/^.*(\/check|tín|Check|Tín|check|Check|Tin|tin).*$/, ctx => {
-    var userName = ctx.message.text.match(/@([\w]+)/);
+    var userName = filterUsername(ctx.message.text.match(/@([\w]+)/));
     if(userName){
         return ctx.reply(userName.join(' '));
     }
